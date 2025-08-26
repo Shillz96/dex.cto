@@ -1,0 +1,16 @@
+/* Minimal CSS reset - only target root elements to remove white borders */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+}
+
+/* Ensure Next.js root container has no default spacing */
+#__next {
+  margin: 0;
+  padding: 0;
+}
+
+/* Import error display styles */
+@import './errorDisplay.css';

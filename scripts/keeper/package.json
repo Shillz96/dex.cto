@@ -1,0 +1,24 @@
+{
+  "name": "cto-dex-keeper",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.31.1",
+    "@solana/spl-token": "^0.4.8",
+    "@solana/web3.js": "^1.95.3",
+    "bn.js": "^5.2.2",
+    "dotenv": "^16.4.5",
+    "keccak": "^3.0.4",
+    "playwright": "^1.46.0",
+    "tweetnacl": "^1.0.3"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.5"
+  }
+}

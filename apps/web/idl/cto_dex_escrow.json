@@ -1,0 +1,146 @@
+{
+  "version": "0.1.0",
+  "name": "cto_dex_escrow",
+  "instructions": [
+    {
+      "name": "initCampaign",
+      "accounts": [
+        { "name": "creator", "isMut": true, "isSigner": true },
+        { "name": "payMint", "isMut": false, "isSigner": false },
+        { "name": "campaign", "isMut": true, "isSigner": false },
+        { "name": "vault", "isMut": true, "isSigner": false },
+        { "name": "systemProgram", "isMut": false, "isSigner": false },
+        { "name": "tokenProgram", "isMut": false, "isSigner": false },
+        { "name": "associatedTokenProgram", "isMut": false, "isSigner": false },
+        { "name": "rent", "isMut": false, "isSigner": false }
+      ],
+      "args": [
+        { "name": "targetAmount", "type": "u64" },
+        { "name": "deadlineUnix", "type": "i64" }
+      ]
+    },
+    {
+      "name": "contribute",
+      "accounts": [
+        { "name": "contributor", "isMut": true, "isSigner": true },
+        { "name": "campaign", "isMut": true, "isSigner": false },
+        { "name": "payMint", "isMut": false, "isSigner": false },
+        { "name": "contributorAta", "isMut": true, "isSigner": false },
+        { "name": "vault", "isMut": true, "isSigner": false },
+        { "name": "contribution", "isMut": true, "isSigner": false },
+        { "name": "systemProgram", "isMut": false, "isSigner": false },
+        { "name": "tokenProgram", "isMut": false, "isSigner": false },
+        { "name": "associatedTokenProgram", "isMut": false, "isSigner": false },
+        { "name": "rent", "isMut": false, "isSigner": false }
+      ],
+      "args": [
+        { "name": "amount", "type": "u64" }
+      ]
+    },
+    {
+      "name": "submitMetadata",
+      "accounts": [
+        { "name": "submitter", "isMut": false, "isSigner": true },
+        { "name": "campaign", "isMut": true, "isSigner": false }
+      ],
+      "args": [
+        { "name": "uri", "type": "string" },
+        { "name": "metadataHash", "type": { "array": ["u8", 32] } }
+      ]
+    },
+    {
+      "name": "finalize",
+      "accounts": [
+        { "name": "campaign", "isMut": true, "isSigner": false }
+      ],
+      "args": []
+    },
+    {
+      "name": "refund",
+      "accounts": [
+        { "name": "contributor", "isMut": true, "isSigner": true },
+        { "name": "campaign", "isMut": true, "isSigner": false },
+        { "name": "payMint", "isMut": false, "isSigner": false },
+        { "name": "contributorAta", "isMut": true, "isSigner": false },
+        { "name": "vault", "isMut": true, "isSigner": false },
+        { "name": "contribution", "isMut": true, "isSigner": false },
+        { "name": "tokenProgram", "isMut": false, "isSigner": false }
+      ],
+      "args": []
+    },
+    {
+      "name": "setMerchantHash",
+      "accounts": [
+        { "name": "authority", "isMut": false, "isSigner": true },
+        { "name": "campaign", "isMut": true, "isSigner": false }
+      ],
+      "args": [
+        { "name": "merchantHash", "type": { "array": ["u8", 32] } }
+      ]
+    },
+    {
+      "name": "setDelegateAuthority",
+      "accounts": [
+        { "name": "creator", "isMut": false, "isSigner": true },
+        { "name": "campaign", "isMut": true, "isSigner": false }
+      ],
+      "args": [
+        { "name": "delegate", "type": "publicKey" }
+      ]
+    },
+    {
+      "name": "payout",
+      "accounts": [
+        { "name": "campaign", "isMut": true, "isSigner": false },
+        { "name": "payMint", "isMut": false, "isSigner": false },
+        { "name": "vault", "isMut": true, "isSigner": false },
+        { "name": "merchantAta", "isMut": true, "isSigner": false },
+        { "name": "tokenProgram", "isMut": false, "isSigner": false }
+      ],
+      "args": [
+        { "name": "amount", "type": "u64" }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "campaign",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          { "name": "creator", "type": "publicKey" },
+          { "name": "payMint", "type": "publicKey" },
+          { "name": "bump", "type": "u8" },
+          { "name": "targetAmount", "type": "u64" },
+          { "name": "totalContributed", "type": "u64" },
+          { "name": "deadline", "type": "i64" },
+          { "name": "status", "type": "u8" },
+          { "name": "topContributor", "type": "publicKey" },
+          { "name": "topContributorAmount", "type": "u64" },
+          { "name": "metadataUri", "type": "string" },
+          { "name": "metadataHash", "type": { "array": ["u8", 32] } },
+          { "name": "merchantHash", "type": { "array": ["u8", 32] } },
+          { "name": "merchantHashSet", "type": "bool" },
+          { "name": "delegateAuthority", "type": "publicKey" }
+        ]
+      }
+    },
+    {
+      "name": "contribution",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          { "name": "contributor", "type": "publicKey" },
+          { "name": "campaign", "type": "publicKey" },
+          { "name": "amount", "type": "u64" },
+          { "name": "refunded", "type": "bool" }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "address": "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+  }
+}
+
+

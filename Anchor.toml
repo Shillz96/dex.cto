@@ -1,0 +1,26 @@
+[features]
+seeds = true
+skip-lint = false
+
+[programs.localnet]
+cto_dex_escrow = "CfzHBxVGRyVC6TythNtmDkXVX1k9iJQvwzBasFDDbLsY"
+
+[programs.mainnet]
+cto_dex_escrow = "CfzHBxVGRyVC6TythNtmDkXVX1k9iJQvwzBasFDDbLsY"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+# Keep provider cluster explicit via CLI flags (anchor --provider.cluster <cluster>)
+# Default here is non-authoritative; scripts pass cluster explicitly.
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "anchor test"
+
+[toolchain]
+anchor_version = "0.31.1"
+
+

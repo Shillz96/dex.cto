@@ -1,0 +1,17 @@
+{
+  "name": "cto.dex",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "scripts/*"
+  ],
+  "scripts": {
+    "dev": "pnpm -C apps/web dev",
+    "build": "pnpm -C apps/web build",
+    "start": "pnpm -C apps/web start",
+    "keeper": "pnpm -C scripts/keeper start"
+  }
+}
+
+

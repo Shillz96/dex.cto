@@ -1,0 +1,22 @@
+[package]
+name = "cto_dex_escrow"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "cto_dex_escrow"
+
+[features]
+no-entrypoint = []
+default = []
+
+[dependencies]
+anchor-lang = { version = "0.31.1", features = ["init-if-needed"] }
+anchor-spl = { version = "0.31.1", features = ["associated_token", "token"] }
+# Use anchor's exported solana instead of an explicit solana-program dep
+sha2 = "0.10"
+tiny-keccak = { version = "2", features = ["keccak"] }
+bytemuck = { version = "1.14", features = ["derive"] }
+
+
