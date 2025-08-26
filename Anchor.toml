@@ -6,7 +6,7 @@ skip-lint = false
 cto_dex_escrow = "CfzHBxVGRyVC6TythNtmDkXVX1k9iJQvwzBasFDDbLsY"
 
 [programs.mainnet]
-cto_dex_escrow = "CfzHBxVGRyVC6TythNtmDkXVX1k9iJQvwzBasFDDbLsY"
+cto_dex_escrow = "3NUdC2eabnCnNrcYnVo7e4SWxcaqs4zCWpzXt58Upump"
 
 [registry]
 url = "https://anchor.projectserum.com"

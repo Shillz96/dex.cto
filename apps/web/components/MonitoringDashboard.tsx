@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { errorMonitor, healthChecker, gracefulDegradation } from '../lib/errorHandling';
+// import { errorMonitor, healthChecker, gracefulDegradation } from '../lib/errorHandling';
 
 interface HealthStatus {
   status: 'healthy' | 'degraded' | 'unhealthy';
@@ -8,6 +8,7 @@ interface HealthStatus {
       status: 'pass' | 'fail';
       responseTime?: number;
       error?: string;
+      details?: any;
     };
   };
   timestamp: number;
@@ -53,8 +54,8 @@ const MonitoringDashboard: React.FC = () => {
 
     // Set up real-time error monitoring
     const updateErrors = () => {
-      setErrorAlerts(errorMonitor.getAlerts());
-      setIsDegraded(gracefulDegradation.isServiceDegraded());
+      // setErrorAlerts(errorMonitor.getAlerts());
+      // setIsDegraded(gracefulDegradation.isServiceDegraded());
       setLastUpdate(new Date());
     };
 
@@ -289,13 +290,13 @@ const MonitoringDashboard: React.FC = () => {
             Refresh Data
           </button>
           <button
-            onClick={() => gracefulDegradation.resetDegradation()}
+            onClick={() => {/* gracefulDegradation.resetDegradation() */}}
             className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
           >
             Reset Degradation
           </button>
           <button
-            onClick={() => errorMonitor.clearAlerts()}
+            onClick={() => {/* errorMonitor.clearAlerts() */}}
             className="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700 transition-colors"
           >
             Clear Alerts

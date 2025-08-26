@@ -6,6 +6,11 @@ Time-locked, goal-based escrow for community-funded DEX Screener Enhanced Token 
 - Project overview: see `docs/PROJECT_OVERVIEW.md`
 - Contributor task board: see `docs/TASK_LIST.md`
 
+### 🚀 Deployment Status
+- **Mainnet**: `3NUdC2eabnCnNrcYnVo7e4SWxcaqs4zCWpzXt58Upump`
+- **Network**: Solana Mainnet
+- **Status**: ✅ Live
+
 ### Monorepo layout
 - `programs/cto_dex_escrow`: Anchor program (escrow + refund + payout guard)
 - `apps/web`: Next.js app (wallet connect, create/join campaign, contribute, refund, submit metadata)
