@@ -22,7 +22,7 @@
     "@solana/wallet-adapter-wallets": "^0.19.30",
     "@solana/web3.js": "^1.95.3",
     "next": "^14.2.5",
-    "react": "^18.2.0",
+    "react": "^19.1.1",
     "react-dom": "^18.2.0",
     "zod": "^3.23.8"
   },
